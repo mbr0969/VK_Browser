@@ -10,6 +10,8 @@ import su.pushnoe.vk.di.module.RestModule;
 import su.pushnoe.vk.ui.activity.BaseActivity;
 import su.pushnoe.vk.ui.activity.MainActivity;
 import su.pushnoe.vk.ui.fragment.NewsFeedFragment;
+import su.pushnoe.vk.ui.holder.NewsItemBodyHolder;
+import su.pushnoe.vk.ui.holder.NewsItemFooterHolder;
 
 /**
  * Интерфейс приложения
@@ -25,4 +27,9 @@ public interface ApplicationComponent {
 
     //fragments
     void inject(NewsFeedFragment fragment);
+    //Holder
+    void inject(NewsItemBodyHolder holder);
+    void inject(NewsItemFooterHolder holder);
+
+
 }

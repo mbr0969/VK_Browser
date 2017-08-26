@@ -5,6 +5,6 @@ import su.pushnoe.vk.model.WallItem;
 /**
  * Класс ответов от стены группы
  */
-public class WallGetResponse extends Full<ItemWithSenderResponse<WallItem>> {
+public class GetWallResponse extends Full<ItemWithSenderResponse<WallItem>> {
 
 }

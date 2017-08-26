@@ -49,6 +49,7 @@ public class MainActivity extends BaseActivity implements MainView {
         return R.layout.activity_main;
     }
 
+
     /**
      *
      * @param requestCode
@@ -71,6 +72,8 @@ public class MainActivity extends BaseActivity implements MainView {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
+
+
 
     /**
      *

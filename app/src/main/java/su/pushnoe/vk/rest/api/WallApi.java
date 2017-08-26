@@ -5,7 +5,7 @@ import java.util.Map;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.QueryMap;
-import su.pushnoe.vk.rest.module.response.WallGetResponse;
+import su.pushnoe.vk.rest.module.response.GetWallResponse;
 
 /**
  *
@@ -18,5 +18,5 @@ public interface WallApi {
      * @return
      */
     @GET(ApiMethods.WALL_GET)
-    Call<WallGetResponse> get(@QueryMap Map<String,String> map);
+    Call<GetWallResponse> get(@QueryMap Map<String,String> map);
 }

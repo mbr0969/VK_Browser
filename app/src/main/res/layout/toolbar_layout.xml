@@ -12,7 +12,7 @@
         android:background="@color/colorPrimary"
         app:title="ToolBar"
         app:titleTextColor="@color/colorDefaultWhite"
-        app:popupTheme="@style/Theme.AppCompat.Light"/>
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
 
 </LinearLayout>

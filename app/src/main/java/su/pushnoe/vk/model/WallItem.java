@@ -5,11 +5,14 @@ import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import su.pushnoe.vk.model.attachment.ApiAttachment;
+
 /**
  * Класс записей стены
  */
 public class WallItem {
 
+    private String attachmentString;
     private String senderName;
     private String senderPhoto;
 
@@ -71,6 +74,14 @@ public class WallItem {
     @SerializedName("views")
     @Expose
     private Views views;
+
+    public String getAttachmentString() {
+        return attachmentString;
+    }
+
+    public void setAttachmentString(String attachmentString) {
+        this.attachmentString = attachmentString;
+    }
 
     /**
      *

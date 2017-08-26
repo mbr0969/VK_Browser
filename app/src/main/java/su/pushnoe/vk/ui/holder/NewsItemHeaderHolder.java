@@ -1,7 +1,5 @@
-package su.pushnoe.vk.ui;
+package su.pushnoe.vk.ui.holder;
 
-
-import su.pushnoe.vk.R;
 
 import android.content.Context;
 import android.view.View;
@@ -11,11 +9,11 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import su.pushnoe.vk.R;
 import su.pushnoe.vk.model.view.NewsItemHeaderViewModel;
-import su.pushnoe.vk.ui.holder.BaseViewHolder;
 
 /**
- * Created by papa on 25.08.17.
+ *
  */
 
 public class NewsItemHeaderHolder extends BaseViewHolder<NewsItemHeaderViewModel> {
@@ -25,6 +23,10 @@ public class NewsItemHeaderHolder extends BaseViewHolder<NewsItemHeaderViewModel
     private ImageView ivRepostedIcon;
     private TextView tvRepostedProfileName;
 
+    /**
+     *
+     * @param itemView
+     */
     public NewsItemHeaderHolder(View  itemView){
         super(itemView);
 
@@ -33,6 +35,11 @@ public class NewsItemHeaderHolder extends BaseViewHolder<NewsItemHeaderViewModel
         ivRepostedIcon = (ImageView) itemView.findViewById(R.id.iv_reposted_icon);
         tvRepostedProfileName = (TextView) itemView.findViewById(R.id.tv_reposted_profile_name);
     }
+
+    /**
+     *
+     * @param item
+     */
 
     @Override
     public void bindViewHolder(NewsItemHeaderViewModel item) {
@@ -54,6 +61,9 @@ public class NewsItemHeaderHolder extends BaseViewHolder<NewsItemHeaderViewModel
 
     }
 
+    /**
+     *
+     */
     @Override
     public void unbindViewHolder() {
         civProfileImage.setImageBitmap(null);

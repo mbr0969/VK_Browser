@@ -9,18 +9,29 @@ import su.pushnoe.vk.ui.holder.NewsItemBodyHolder;
 /**
  * Класс просмотра новостей группы на стене
  */
-public class NewsItemdBobyViewModel extends BaseViewModel {
+public class NewsItemBobyViewModel extends BaseViewModel {
 
     private int mId;
     private String mText;
+    private String mAttachmentString;
+    private boolean mIsRepost;
 
     /**
      *
      * @param wallItem
      */
-    public NewsItemdBobyViewModel(WallItem wallItem) {
+    public NewsItemBobyViewModel(WallItem wallItem) {
         this.mId = wallItem.getId();
-        this.mText = wallItem.getText();
+        this.mIsRepost = wallItem.haveSharedRepost();
+
+        if (mIsRepost){
+
+            this.mText = wallItem.getSharedRepost().getText();
+            this.mAttachmentString = wallItem.getSharedRepost().getAttachmentString();
+        }else {
+            this.mText = wallItem.getText();
+            this.mAttachmentString = wallItem.getAttachmentString();
+        }
     }
 
     /**
@@ -56,5 +67,9 @@ public class NewsItemdBobyViewModel extends BaseViewModel {
      */
     public String getText() {
         return mText;
+    }
+
+    public String getmAttachmentString() {
+        return mAttachmentString;
     }
 }

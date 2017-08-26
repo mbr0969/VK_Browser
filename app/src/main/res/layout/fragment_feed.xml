@@ -3,8 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorDefaultWhite"
-    android:fitsSystemWindows="true"
-    tools:context="su.pushnoe.vk.ui.fragment.NewsFeedFragment">
+    android:fitsSystemWindows="true">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_list"

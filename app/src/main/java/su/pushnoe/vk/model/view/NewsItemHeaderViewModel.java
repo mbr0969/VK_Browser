@@ -3,7 +3,7 @@ package su.pushnoe.vk.model.view;
 import android.view.View;
 
 import su.pushnoe.vk.model.WallItem;
-import su.pushnoe.vk.ui.NewsItemHeaderHolder;
+import su.pushnoe.vk.ui.holder.NewsItemHeaderHolder;
 import su.pushnoe.vk.ui.holder.BaseViewHolder;
 
 /**

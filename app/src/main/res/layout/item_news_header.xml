@@ -4,6 +4,7 @@
     android:id="@+id/root_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:clickable="true"
     android:focusable="true">
 
@@ -26,14 +27,14 @@
                 android:id="@+id/tv_profile_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="pushnoe.su"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="16dp"
                 android:layout_toRightOf="@+id/civ_profile_image"
                 android:lines="1"
                 android:textColor="@color/colorAccent"
                 android:textSize="16sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                tools:text="pushnoe.su"/>
             <ImageView
                 android:id="@+id/iv_reposted_icon"
                 android:layout_width="16dp"
@@ -58,6 +59,7 @@
                 android:textSize="15sp"/>
 
         </RelativeLayout>
+
     </RelativeLayout>
 
     <View
