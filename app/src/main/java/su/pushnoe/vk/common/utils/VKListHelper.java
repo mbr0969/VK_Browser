@@ -18,6 +18,7 @@ public class VKListHelper {
      * @return
      */
     public static List<WallItem> getWallList(ItemWithSenderResponse<WallItem> response){
+
         List<WallItem> wallItems = response.items;
 
         for (WallItem wallItem : wallItems){
@@ -25,7 +26,8 @@ public class VKListHelper {
             wallItem.setSenderName(sender.getFullName());
             wallItem.setSenderPhoto(sender.getPhoto());
 
-            wallItem.setAttachmentString(Utils.convertAttachmentsToFontIcons(wallItem.getAttachments()));
+            wallItem.setAttachmentString(Utils
+                    .convertAttachmentsToFontIcons(wallItem.getAttachments()));
 
 
 
@@ -34,8 +36,8 @@ public class VKListHelper {
                 wallItem.getSharedRepost().setSenderName(repostSender.getFullName());
                 wallItem.getSharedRepost().setSenderPhoto(repostSender.getPhoto());
 
-                wallItem.getSharedRepost().setAttachmentString(Utils.convertAttachmentsToFontIcons(
-                        wallItem.getSharedRepost().getAttachments()
+                wallItem.getSharedRepost().setAttachmentString(Utils
+                        .convertAttachmentsToFontIcons(wallItem.getSharedRepost().getAttachments()
                 ));
 
             }

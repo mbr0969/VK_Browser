@@ -4,10 +4,12 @@ package su.pushnoe.vk.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import io.realm.RealmObject;
+
 /**
  * Класс Лайков
  */
-public class Likes {
+public class Likes extends RealmObject{
 
     @SerializedName("count")
     @Expose

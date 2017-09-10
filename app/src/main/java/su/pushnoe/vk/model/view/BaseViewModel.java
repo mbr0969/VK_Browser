@@ -40,7 +40,7 @@ public abstract class BaseViewModel {
     public enum LayoutTypes{
         NewFeedItemHeader(R.layout.item_news_header),
         NewFeedItemBody(R.layout.item_news_body),
-        NewFeedItemFoter(R.layout.item_news_footer);
+        NewFeedItemFooter(R.layout.item_news_footer);
 
         private final int id;
         LayoutTypes(int resId){
@@ -51,6 +51,9 @@ public abstract class BaseViewModel {
         public int getValue(){
             return id;
         }
+    }
 
+    public boolean isItemDecorator(){
+        return false;
     }
 }

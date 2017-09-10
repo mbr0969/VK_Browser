@@ -29,7 +29,7 @@ public class NewsItemBodyHolder extends BaseViewHolder<NewsItemBobyViewModel> {
         super(itemView);
         MyApplication.getApplicationComponent().inject(this);
 
-        mText = (TextView) itemView.findViewById(R.id.tv_text);
+       mText = (TextView) itemView.findViewById(R.id.tv_text);
         tvAttachments = (TextView) itemView.findViewById(R.id.tv_attachments);
 
         if (tvAttachments != null){

@@ -4,11 +4,13 @@ package su.pushnoe.vk.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import io.realm.RealmObject;
+
 /**
  * Класс Репостов
  */
 
-public class Reposts {
+public class Reposts extends RealmObject{
 
     @SerializedName("count")
     @Expose

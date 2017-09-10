@@ -4,9 +4,11 @@ package su.pushnoe.vk.di.component;
 import javax.inject.Singleton;
 
 import dagger.Component;
+import su.pushnoe.vk.common.manager.*;
 import su.pushnoe.vk.di.module.ApplicationModule;
 import su.pushnoe.vk.di.module.ManagerModule;
 import su.pushnoe.vk.di.module.RestModule;
+import su.pushnoe.vk.mvp.presenter.*;
 import su.pushnoe.vk.ui.activity.BaseActivity;
 import su.pushnoe.vk.ui.activity.MainActivity;
 import su.pushnoe.vk.ui.fragment.NewsFeedFragment;
@@ -30,6 +32,12 @@ public interface ApplicationComponent {
     //Holder
     void inject(NewsItemBodyHolder holder);
     void inject(NewsItemFooterHolder holder);
+
+    //presenter
+    void inject(NewsFeedPresenter presenter);
+
+    //managers
+    void inject(NetworkManager manager);
 
 
 }

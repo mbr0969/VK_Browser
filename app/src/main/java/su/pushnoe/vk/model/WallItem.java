@@ -1,21 +1,23 @@
 package su.pushnoe.vk.model;
 
-import java.util.ArrayList;
-import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import io.realm.RealmList;
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 import su.pushnoe.vk.model.attachment.ApiAttachment;
 
 /**
  * Класс записей стены
  */
-public class WallItem {
+public class WallItem extends RealmObject{
 
     private String attachmentString;
     private String senderName;
     private String senderPhoto;
 
+    @PrimaryKey
     @SerializedName("id")
     @Expose
     private Integer id;
@@ -49,11 +51,11 @@ public class WallItem {
 
     @SerializedName("attachments")
     @Expose
-    private List<ApiAttachment> attachments = new ArrayList<>();
+    private RealmList<ApiAttachment> attachments = new RealmList<>();
 
     @SerializedName("copy_history")
     @Expose
-    private List<WallItem> copyHistory = new ArrayList<>();
+    private RealmList<WallItem> copyHistory = new RealmList<>();
 
     @SerializedName("post_source")
     @Expose
@@ -215,7 +217,7 @@ public class WallItem {
      *
      * @return
      */
-    public List<ApiAttachment> getAttachments() {
+    public RealmList<ApiAttachment> getAttachments() {
         return attachments;
     }
 
@@ -223,7 +225,7 @@ public class WallItem {
      *
      * @param attachments
      */
-    public void setAttachments(List<ApiAttachment> attachments) {
+    public void setAttachments(RealmList<ApiAttachment> attachments) {
         this.attachments = attachments;
     }
 

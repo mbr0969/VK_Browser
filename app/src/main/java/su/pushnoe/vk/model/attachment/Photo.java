@@ -4,11 +4,10 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.vk.sdk.api.model.VKAttachments;
 
-/**
- * Created by papa on 26.08.17.
- */
+import io.realm.RealmObject;
 
-public class Photo implements Attachment {
+
+public class Photo extends RealmObject implements Attachment {
 
     @SerializedName("id")
     @Expose

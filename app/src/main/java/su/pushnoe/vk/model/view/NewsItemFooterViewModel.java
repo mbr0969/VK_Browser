@@ -35,7 +35,7 @@ public class NewsItemFooterViewModel extends BaseViewModel {
 
     @Override
     public LayoutTypes getTypes() {
-        return LayoutTypes.NewFeedItemFoter;
+        return LayoutTypes.NewFeedItemFooter;
     }
 
     @Override
@@ -89,5 +89,10 @@ public class NewsItemFooterViewModel extends BaseViewModel {
 
     public void setDataLong(long mDataLong) {
         this.mDataLong = mDataLong;
+    }
+
+    @Override
+    public boolean isItemDecorator() {
+        return true;
     }
 }

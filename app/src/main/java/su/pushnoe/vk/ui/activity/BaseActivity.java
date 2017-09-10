@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.v7.widget.Toolbar;
 import android.widget.FrameLayout;
+import android.widget.ProgressBar;
 
 import com.arellomobile.mvp.MvpAppCompatActivity;
 
@@ -19,9 +20,12 @@ import su.pushnoe.vk.ui.fragment.BaseFragment;
  */
 public abstract class BaseActivity extends MvpAppCompatActivity {
 
+    protected ProgressBar mProgressBar;
+
     @Inject
     MyFragmentManager myFragmentManager;
     Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -30,8 +34,11 @@ public abstract class BaseActivity extends MvpAppCompatActivity {
         setContentView(R.layout.activity_base);
         MyApplication.getApplicationComponent().inject(this);
 
+
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        mProgressBar = (ProgressBar) findViewById(R.id.progress);
 
         FrameLayout parent = (FrameLayout) findViewById(R.id.main_wrapper);
         getLayoutInflater().inflate(getMainContentLayout(),parent);
@@ -40,8 +47,8 @@ public abstract class BaseActivity extends MvpAppCompatActivity {
     @LayoutRes
     protected abstract int getMainContentLayout();
 
-    public void fragmentOnScreen(BaseFragment baseFragment){
-        setToolbarTitle(baseFragment.createToolbarTitle(this));
+    public void fragmentOnScreen(BaseFragment fragment){
+        setToolbarTitle(fragment.createToolbarTitle(this));
     }
 
     //Meтод устанвоки заголовка
@@ -70,6 +77,10 @@ public abstract class BaseActivity extends MvpAppCompatActivity {
         return myFragmentManager.removeFragment(this,fragment);
     }
 
+
+    public ProgressBar getProgressBar() {
+        return mProgressBar;
+    }
 
     @Override
     public void onBackPressed(){

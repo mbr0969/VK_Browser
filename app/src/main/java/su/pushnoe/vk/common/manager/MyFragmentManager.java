@@ -18,30 +18,34 @@ public class MyFragmentManager  {
     private BaseFragment mCurrentFragment;
 
     /**
-     *установка фрагмента
+     *установка корневого фрагмента
      * @param activity
      * @param fragment
-     * @param containerID
+     * @param containerid
      */
-    public void setFragment(BaseActivity activity, BaseFragment fragment, @IdRes int containerID){
+    public void setFragment(BaseActivity activity, BaseFragment fragment, @IdRes int containerid){
+
         if (activity != null && !activity.isFinishing() && !isAlreadyContains(fragment)){
-            FragmentTransaction transaction = createAddTransaction(activity,fragment,false);
-            transaction.replace(containerID,fragment);
-            commitAddTransaction(activity,fragment,transaction,false);
+
+            FragmentTransaction fragmentTransaction = createAddTransaction(activity,fragment,false);
+            fragmentTransaction.replace(containerid,fragment);
+            commitAddTransaction(activity,fragment,fragmentTransaction,false);
         }
 
     }
 
     /**
-     * добавление фрагмента
+     * добавление фрагмента поверх коневого
      * @param activity
      * @param fragment
-     * @param containerID
+     * @param containerid
      */
-    public void addFragment(BaseActivity activity,  BaseFragment fragment, @IdRes int containerID ){
+    public void addFragment(BaseActivity activity,  BaseFragment fragment, @IdRes int containerid ){
+
         if (activity !=null && !activity.isFinishing() && !isAlreadyContains(fragment)){
-            FragmentTransaction transaction = createAddTransaction(activity,fragment,true);
-            commitAddTransaction(activity,fragment,transaction,true);
+            FragmentTransaction fragmentTransaction = createAddTransaction(activity,fragment,true);
+            fragmentTransaction.add(containerid, fragment);
+            commitAddTransaction(activity,fragment,fragmentTransaction,true);
         }
 
     }
@@ -53,6 +57,7 @@ public class MyFragmentManager  {
      * @return
      */
     public boolean removeFragment(BaseActivity activity, BaseFragment fragment){
+
         boolean canRemove = fragment !=null && mFragmentStack.size() > EMPTY_FRAGMENT_STACK_SIZE;
 
         if (canRemove){
@@ -76,6 +81,8 @@ public class MyFragmentManager  {
         return removeFragment(activity,mCurrentFragment);
     }
 
+
+
     private FragmentTransaction createAddTransaction(BaseActivity activity,BaseFragment fragment,
                                                      boolean addToBackStack){
         FragmentTransaction fragmentTransaction = activity.getSupportFragmentManager().beginTransaction();
@@ -86,18 +93,19 @@ public class MyFragmentManager  {
         return  fragmentTransaction;
     }
 
+
     private void commitAddTransaction(BaseActivity activity, BaseFragment fragment, FragmentTransaction transaction,
                                       boolean addToBackStack){
         if (transaction != null){
             mCurrentFragment = fragment;
-        }
 
-        if (!addToBackStack){
-            mFragmentStack = new Stack<>();
-        }
+            if (!addToBackStack){
+                mFragmentStack = new Stack<>();
+            }
 
         mFragmentStack.add(fragment);
         commitTransaction(activity, transaction);
+        }
     }
 
     private void commitTransaction(BaseActivity activity, FragmentTransaction transaction){

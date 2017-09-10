@@ -6,6 +6,7 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 import su.pushnoe.vk.common.manager.MyFragmentManager;
+import su.pushnoe.vk.common.manager.NetworkManager;
 
 /**
  * Класс манаджера модулей
@@ -21,5 +22,11 @@ public class ManagerModule {
     @Provides
     MyFragmentManager provaderMyFragmentManager(){
         return  new MyFragmentManager();
+    }
+
+    @Singleton
+    @Provides
+    NetworkManager providerNetworkManager(){
+        return new NetworkManager();
     }
 }

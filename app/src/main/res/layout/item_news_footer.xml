@@ -150,9 +150,9 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="7dp"
-        android:layout_alignParentTop="true"
-        android:background="@color/colorDivider"
+        android:layout_height="9dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/my_gradient"
         />
 
 </RelativeLayout>

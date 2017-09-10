@@ -4,10 +4,12 @@ package su.pushnoe.vk.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import io.realm.RealmObject;
+
 /**
  * Класс группы
  */
-public class Group implements Owner{
+public class Group extends RealmObject implements Owner{
 
     @SerializedName("id")
     @Expose

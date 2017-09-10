@@ -80,7 +80,7 @@ public class BaseAdapter extends RecyclerView.Adapter<BaseViewHolder<BaseViewMod
      */
     public void registerTypeInstance(BaseViewModel item){
 
-        if (!mTypeInstances.containsKey(item.getTypes().getValue())){
+        if (!mTypeInstances.containsKey(item.getTypes())){
             mTypeInstances.put(item.getTypes().getValue(), item);
         }
     }
@@ -112,5 +112,15 @@ public class BaseAdapter extends RecyclerView.Adapter<BaseViewHolder<BaseViewMod
      */
     public void clearList(){
         list.clear();
+    }
+
+    public int getRealItemCount(){
+        int count = 0;
+        for (int i = 0; i< getItemCount(); i++){
+            if (!getItem(i).isItemDecorator()){
+                count +=1;
+            }
+        }
+        return count;
     }
 }
